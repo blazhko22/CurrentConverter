@@ -33,7 +33,7 @@ function CountButton (props) {
   )
 }
 
-function ClickCalc() {
+function ClickCalc(props) {
   const [counts, setCounts] = useState('0');
   const [result, setResult] = useState('');
 
@@ -65,6 +65,7 @@ function ClickCalc() {
               onClick={() => {
                 setResult(eval(counts))
                 setCounts('0')
+                props.onClick(counts)
               }}>
               =
             </Button>
