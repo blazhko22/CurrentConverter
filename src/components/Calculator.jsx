@@ -3,9 +3,24 @@ import {Box, Button } from '@chakra-ui/react';
 import ClickCalc from './ClickCalc';
 import InputCalc from './InputCalc';
 
+// function History(props) { 
+//     const results = props.data.map(result => { 
+//         return <Button key={result}>{result}</Button> 
+//     })
+//     return (
+//         <Box> 
+//             {results} 
+//         </Box>
+//     )
+// }
 function History(props) { 
-    const results = props.data.map(result => { 
-        return <Button key={result}>{result}</Button> 
+    const results = props.data.map((result, index) => { 
+        return (
+            <Button 
+                className='draggable'
+                key={index}>
+                {result}
+            </Button>) 
     })
     return (
         <Box> 
